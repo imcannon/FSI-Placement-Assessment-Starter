@@ -1,48 +1,68 @@
 // HINT: You can delete this console.log after you no longer need it!
-console.log('JavaScript code has loaded!')
+
 // First, tell us your name
-let yourName = "Ian Cannon" // HINT: Replace this with your own name!
+let yourName = 'Ian Cannon' // HINT: Replace this with your own name!
 
 // We'll use these variables to track the counts of each cookie type
 let gb = 0 // Gingerbread
 let cc = 0 // Chocolate Chip
 let sugar = 0 // Sugar Sprinkle
 
+let gbcount = document.querySelector("#qty-gb")
+let cccount = document.querySelector("#qty-cc")
+let sugarcount = document.querySelector("#qty-sugar")
 
-// selecting the element with an id of credit
-const credit = document.querySelector('#credit')
+
+console.log("Gingerbread", gbcount)
+
 // selecting the element with an id of add-gb
-const gbPlusBtn = document.querySelector('#add-gb')
-const gbMinusBtn = document.querySelector('#minus-gb')
-const ccPlusBtn = document.querySelector('#plus-cc')
-const ccMinusBtn = document.querySelector('#minus-cc')
-const sugarPlusBtn = document.querySelector('#plus-sugar')
-const sugarMinusBtn = document.querySelector('#minus-sugar')
+let gbPlusBtn = document.querySelector('#add-gb')
+let gbMinusBtn = document.querySelector('#minus-gb')
 
+gbPlusBtn.addEventListener("click", function() {
+    gb = gb + 1;
 
-
-// Code to update name display
-credit.textContent = `Created by ${yourName}`
-
-
-
-// Event listener for clicks on the "+" button for Gingerbread cookies
-gbPlusBtn.addEventListener('click', function() {
-    "qty-gb" = gb + 1;
-
-// HINT: You can delete this console.log after you no longer need it!
-console.log("Gingerbread + button was clicked!")
-console.log("Gingerbread - button was clicked!")
-console.log("Chocolate chip + button was clicked!")
-console.log("Chocolate chip - button was clicked!")
-console.log("Sugar + button was clicked!")
-console.log("Sugar - button was clicked!")
-
-
-// TODO: Write the code to be run when the "+" button for "Gingerbread" is clicked
+    gbcount.textContent = gb
 })
 
-// TODO: Hook up event listeners for the rest of the buttons
+gbMinusBtn.addEventListener("click", function() {
+    gb = gb - 1;
 
+    gbcount.textContent = gb
+})
 
+console.log("Chocolate Chip", cccount)
 
+let ccPlusBtn = document.querySelector('#plus-cc')
+let ccMinusBtn = document.querySelector('#minus-cc')
+
+ccMinusBtn.addEventListener("click", function() {
+    cc = cc - 1;
+
+    cccount.textContent = cc
+})
+
+console.log("Sugar", sugarcount)
+
+let sugarPlusBtn = document.querySelector('#plus-sugar')
+let sugarMinusBtn = document.querySelector('#minus-sugar')
+
+sugarMinusBtn.addEventListener("click", function() {
+    sugar = sugar - 1;
+
+    sugarcount.textContent = sugar
+})
+
+ccPlusBtn.addEventListener("click", function() {
+    cc = cc + 1;
+
+    cccount.textContent = cc
+})
+
+sugarPlusBtn.addEventListener("click", function() {
+    sugar = sugar + 1;
+
+    sugarcount.textContent = sugar
+})
+// Code to update name display
+credit.textContent = `Created by ${yourName}`
